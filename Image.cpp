@@ -2,16 +2,16 @@
 //
 // Image.cpp : Defines the class operations on images
 //
-// Author - Parag Havaldar
+// Author - Aditya Dhulipala - based on starter code by Prof. Parag Havaldar
 // Code used by students as starter code to display and modify images
 //
 //*****************************************************************************
 
-#include "MyImage.h"
+#include "Image.h"
 
 
 // Constructor and Desctructors
-MyImage::MyImage()
+Image::Image()
 {
     Data = NULL;
     Width = -1;
@@ -19,7 +19,7 @@ MyImage::MyImage()
     ImagePath[0] = 0;
 }
 
-MyImage::~MyImage()
+Image::~Image()
 {
     if ( Data )
         delete Data;
@@ -27,7 +27,7 @@ MyImage::~MyImage()
 
 
 // Copy constructor
-MyImage::MyImage( MyImage *otherImage)
+Image::Image( Image *otherImage)
 {
     Height = otherImage->Height;
     Width  = otherImage->Width;
@@ -45,7 +45,7 @@ MyImage::MyImage( MyImage *otherImage)
 
 
 // = operator overload
-MyImage & MyImage::operator= (const MyImage &otherImage)
+Image &Image::operator= (const Image &otherImage)
 {
     Height = otherImage.Height;
     Width  = otherImage.Width;
@@ -62,9 +62,9 @@ MyImage & MyImage::operator= (const MyImage &otherImage)
 }
 
 
-// MyImage::ReadImage
+// Image::ReadImage
 // Function to read the image given a path
-bool MyImage::ReadImage()
+bool Image::ReadImage()
 {
 
     // Verify ImagePath
@@ -124,8 +124,8 @@ bool MyImage::ReadImage()
 
 
 
-// MyImage functions defined here
-bool MyImage::WriteImage()
+// Image functions defined here
+bool Image::WriteImage()
 {
     // Verify ImagePath
     // Verify ImagePath
@@ -187,7 +187,7 @@ bool MyImage::WriteImage()
 
 // Here is where you would place your code to modify an image
 // eg Filtering, Transformation, Cropping, etc.
-bool MyImage::Modify()
+bool Image::Modify()
 {
 
     // TO DO by student

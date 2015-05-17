@@ -1,6 +1,6 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
-#include "MyImage.h"
+#include "Image.h"
 #include <iostream>
 
 cv::Mat src; cv::Mat dst;
@@ -30,7 +30,7 @@ int main( int argc, char** argv )
 }
 
 void testMyImage() {
-    MyImage image;
+    Image image;
     image.setHeight(288);
     image.setWidth(352);
     image.setImagePath("../../Resources/flowers006.rgb");
