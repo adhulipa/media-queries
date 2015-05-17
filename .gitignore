@@ -1,0 +1,4 @@
+# Ignore build - contains binaries
+# Ignore Resources - contains data
+**/build/**
+**/Resources/**
