@@ -1,17 +1,17 @@
 //*****************************************************************************
 //
-// Image.cpp : Defines the class operations on images
+// Frame.cpp : Defines the class operations on images
 //
 // Author - Aditya Dhulipala - based on starter code by Prof. Parag Havaldar
 // Code used by students as starter code to display and modify images
 //
 //*****************************************************************************
 
-#include "Image.h"
+#include "Frame.h"
 
 
 // Constructor and Desctructors
-Image::Image()
+Frame::Frame()
 {
     Data = NULL;
     Width = -1;
@@ -19,7 +19,7 @@ Image::Image()
     ImagePath[0] = 0;
 }
 
-Image::~Image()
+Frame::~Frame()
 {
     if ( Data )
         delete Data;
@@ -27,7 +27,7 @@ Image::~Image()
 
 
 // Copy constructor
-Image::Image( Image *otherImage)
+Frame::Frame( Frame *otherImage)
 {
     Height = otherImage->Height;
     Width  = otherImage->Width;
@@ -45,7 +45,7 @@ Image::Image( Image *otherImage)
 
 
 // = operator overload
-Image &Image::operator= (const Image &otherImage)
+Frame &Frame::operator= (const Frame &otherImage)
 {
     Height = otherImage.Height;
     Width  = otherImage.Width;
@@ -62,16 +62,16 @@ Image &Image::operator= (const Image &otherImage)
 }
 
 
-// Image::ReadImage
+// Frame::ReadImage
 // Function to read the image given a path
-bool Image::ReadImage()
+bool Frame::ReadImage()
 {
 
     // Verify ImagePath
     if (ImagePath[0] == 0 || Width < 0 || Height < 0 )
     {
-        fprintf(stderr, "Image or Image properties not defined");
-        fprintf(stderr, "Usage is `Image.exe Imagefile w h`");
+        fprintf(stderr, "Frame or Frame properties not defined");
+        fprintf(stderr, "Usage is `Frame.exe Imagefile w h`");
         return false;
     }
 
@@ -124,14 +124,14 @@ bool Image::ReadImage()
 
 
 
-// Image functions defined here
-bool Image::WriteImage()
+// Frame functions defined here
+bool Frame::WriteImage()
 {
     // Verify ImagePath
     // Verify ImagePath
     if (ImagePath[0] == 0 || Width < 0 || Height < 0 )
     {
-        fprintf(stderr, "Image or Image properties not defined");
+        fprintf(stderr, "Frame or Frame properties not defined");
         return false;
     }
 
@@ -187,7 +187,7 @@ bool Image::WriteImage()
 
 // Here is where you would place your code to modify an image
 // eg Filtering, Transformation, Cropping, etc.
-bool Image::Modify()
+bool Frame::Modify()
 {
 
     // TO DO by student

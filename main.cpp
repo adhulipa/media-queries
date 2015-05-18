@@ -1,11 +1,11 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
-#include "Image.h"
+#include "Frame.h"
 #include <iostream>
 
 cv::Mat src; cv::Mat dst;
-char window_name1[] = "Unprocessed Image";
-char window_name2[] = "Processed Image";
+char window_name1[] = "Unprocessed Frame";
+char window_name2[] = "Processed Frame";
 
 void testMyImage();
 
@@ -17,20 +17,20 @@ int main( int argc, char** argv )
     testMyImage();
 
     //cv::namedWindow( window_name1, cv::WINDOW_AUTOSIZE );
-    //imshow("Unprocessed Image",src);
+    //imshow("Unprocessed Frame",src);
 
     dst = src.clone();
     GaussianBlur( src, dst, cv::Size( 15, 15 ), 0, 0 );
 
     //cv::namedWindow( window_name2, cv::WINDOW_AUTOSIZE );
-    //imshow("Processed Image",dst);
+    //imshow("Processed Frame",dst);
 
     cv::waitKey();
     return 0;
 }
 
 void testMyImage() {
-    Image image;
+    Frame image;
     image.setHeight(288);
     image.setWidth(352);
     image.setImagePath("../../Resources/flowers006.rgb");

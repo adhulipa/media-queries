@@ -1,9 +1,9 @@
 //*****************************************************************************
 //
-// Image.h : Defines the class operations on images
+// Frame.h : Defines the class operations on images
 //
 // Author - Aditya Dhulipala - based on starter code by Prof. Parag Havaldar
-// Main Image class structure
+// Main Frame class structure
 //
 //*****************************************************************************
 
@@ -15,29 +15,29 @@
 
 using namespace cv;
 
-// Class structure of Image
+// Class structure of Frame
 // Use to encapsulate an RGB image
-class Image {
+class Frame {
 
 private:
-    int Width;                    // Width of Image
-    int Height;                    // Height of Image
-    char ImagePath[100];    // Image location
+    int Width;                    // Width of Frame
+    int Height;                    // Height of Frame
+    char ImagePath[100];    // Frame location
     char *Data;                    // RGB data of the image
     Mat MatData;
 
 public:
     // Constructor
-    Image();
+    Frame();
 
     // Copy Constructor
-    Image(Image *otherImage);
+    Frame(Frame *otherImage);
 
     // Destructor
-    ~Image();
+    ~Frame();
 
     // operator overload
-    Image &operator=(const Image &otherImage);
+    Frame &operator=(const Frame &otherImage);
 
     // Reader & Writer functions
     void setWidth(const int w) { Width = w; };
