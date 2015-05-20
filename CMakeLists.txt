@@ -10,5 +10,5 @@ find_package(OpenCV REQUIRED)
 # Includes
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
-add_executable(MediaQueries main.cpp Frame.cpp Frame.h Resource.cpp Resource.h SceneDetector.cpp)
+add_executable(MediaQueries main.cpp Frame.cpp Frame.h Resource.cpp Resource.h )
 target_link_libraries( MediaQueries ${OpenCV_LIBS} )

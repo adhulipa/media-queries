@@ -112,6 +112,9 @@ bool Frame::ReadImage()
         Data[3*i+2]	= Rbuf[i];
     }
 
+    // Add image data to Mat for OpenCV
+    MatData = Mat(Height, Width, CV_8UC3, Data);
+
     // Clean up and return
     delete Rbuf;
     delete Gbuf;

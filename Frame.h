@@ -8,6 +8,8 @@
 //*****************************************************************************
 
 // C RunTime Header Files
+#pragma once
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -60,4 +62,3 @@ public:
     bool Modify();
 
 };
-
