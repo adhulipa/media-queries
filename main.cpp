@@ -59,7 +59,7 @@ void testSceneDetector() {
 
     // test
     string suffix = " for " + s1.substr(16) + " & " + s2.substr(16);
-    cout << "ECR = " << computeECR(&img1, &img2) << suffix << endl;
+    cout << "ECR = " << computeECRGpu(&img1, &img2) << suffix << endl;
     imshow(s1.substr(16) + " f1", img1.getMatData());
     imshow(s2.substr(16) + " f2", img2.getMatData());
 
