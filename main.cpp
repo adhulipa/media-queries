@@ -13,8 +13,6 @@
 using namespace std;
 
 cv::Mat src; cv::Mat dst;
-char window_name1[] = "Unprocessed Frame";
-char window_name2[] = "Processed Frame";
 
 void testMyImage();
 
@@ -47,7 +45,7 @@ void testSceneDetector() {
     int width = 352;
     int height = 288;
     string s1 = "../../Resources/StarCraft179.rgb";
-    string s2 = "../../Resources/StarCraft178.rgb";
+    string s2 = "../../Resources/StarCraft179.rgb";
     img1.setWidth(width);
     img1.setHeight(height);
     img2.setWidth(width);
@@ -57,12 +55,18 @@ void testSceneDetector() {
     img1.ReadImage();
     img2.ReadImage();
 
-    // test
+    // test - without GPU methods
     string suffix = " for " + s1.substr(16) + " & " + s2.substr(16);
-    cout << "ECR = " << computeECRGpu(&img1, &img2) << suffix << endl;
+    cout << "ECR = " << computeECR(&img1, &img2) << suffix << endl;
     imshow(s1.substr(16) + " f1", img1.getMatData());
     imshow(s2.substr(16) + " f2", img2.getMatData());
 
+//    // test - using GPU methods
+//    // REQUIRES OpenCV built with GPU support - http://stackoverflow.com/questions/12910902/opencv-error-no-gpu-support-library-is-compiled-without-cuda-support
+//    string suffix = " for " + s1.substr(16) + " & " + s2.substr(16);
+//    cout << "ECR = " << computeECRGpu(&img1, &img2) << suffix << endl;
+//    imshow(s1.substr(16) + " f1", img1.getMatData());
+//    imshow(s2.substr(16) + " f2", img2.getMatData());
 }
 
 
